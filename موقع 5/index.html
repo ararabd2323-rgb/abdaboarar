@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عبد أبو عرار — تعلّم HTML بالعربي</title>
+<meta name="description" content="شروحات HTML بالعربي خطوة بخطوة، مع تجارب حيّة واختبارات.">
+<link rel="icon" href="logo.svg">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#home"><img src="logo.svg" alt="" width="40" height="40"><span>عبد أبو عرار</span></a>
+  <nav id="nav" class="nav">
+    <a href="#videos">الفيديوهات</a>
+    <a href="#playground">جرّب بنفسك</a>
+    <a href="#path">المسار</a>
+    <a href="#quiz">اختبار</a>
+    <a href="#about">عنّي</a>
+    <a href="#contact">تواصل</a>
+  </nav>
+  <button id="theme" class="icon-btn" aria-label="تبديل الوضع">🌙</button>
+  <a class="btn small" data-channel href="#contact">▶ اشترك</a>
+  <button id="burger" class="icon-btn burger" aria-label="القائمة">☰</button>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>تعلّم تصميم المواقع بـ HTML من الصفر</h1>
+        <p class="lead">شرح بسيط وبالعربي، خطوة بخطوة، مع تجارب حيّة بتعملها بنفسك.</p>
+        <div class="actions">
+          <button id="watchFirst" class="btn" type="button">▶ شاهد أول فيديو</button>
+          <a class="btn ghost" href="#playground">جرّب الكود الآن</a>
+        </div>
+        <div class="goal">
+          <div class="goal-top"><span>🎯 هدفنا</span><b id="goalTxt"></b></div>
+          <div class="bar"><i id="goalBar"></i></div>
+        </div>
+      </div>
+      <div class="win" aria-hidden="true">
+        <div class="win-bar"><i></i><i></i><i></i><span>index.html</span></div>
+        <pre id="typed"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" class="wrap block">
+    <h2 class="sec">الفيديوهات</h2>
+    <div id="chips" class="chips"></div>
+    <div id="vgrid" class="grid"></div>
+  </section>
+
+  <section id="playground" class="band">
+    <div class="wrap block">
+      <h2 class="sec">جرّب بنفسك</h2>
+      <p class="muted mb">عدّل على الكود وشوف النتيجة فوراً. ما في شي بينحفظ، جرّب براحتك.</p>
+      <div class="play">
+        <div class="pane">
+          <div class="pane-h"><span>الكود</span>
+            <span><button id="copy" class="mini" type="button">نسخ</button> <button id="reset" class="mini" type="button">إعادة</button></span>
+          </div>
+          <textarea id="code" spellcheck="false" aria-label="محرر الكود"></textarea>
+        </div>
+        <div class="pane">
+          <div class="pane-h"><span>النتيجة</span></div>
+          <iframe id="preview" title="النتيجة" sandbox="allow-scripts allow-modals"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="path" class="wrap block">
+    <h2 class="sec">مسار التعلّم</h2>
+    <ol id="pathList" class="path"></ol>
+  </section>
+
+  <section id="quiz" class="band">
+    <div class="wrap block narrow">
+      <h2 class="sec">اختبر نفسك</h2>
+      <div id="quizBox" class="panel"></div>
+    </div>
+  </section>
+
+  <section id="about" class="wrap block narrow">
+    <h2 class="sec">عنّي</h2>
+    <div class="panel about">
+      <div class="avatar">ع</div>
+      <p>أنا <b>عبد أبو عرار</b>. بشرح تصميم المواقع بـ HTML بالعربي وبطريقة بسيطة، عشان أي حدا يبدأ من الصفر ويبني موقعه الأول.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="band">
+    <div class="wrap block narrow">
+      <h2 class="sec">تواصل معي</h2>
+      <form id="cform" class="panel cform" novalidate>
+        <label>اسمك<input id="cname" autocomplete="name"></label>
+        <label>رسالتك<textarea id="cmsg" rows="4"></textarea></label>
+        <div class="actions">
+          <button class="btn" type="submit">إرسال</button>
+          <a class="btn ghost" data-channel href="#contact">▶ قناتي على يوتيوب</a>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-brand"><img src="logo.svg" alt="" width="34" height="34"><b>عبد أبو عرار</b></div>
+  <p>تعلّم HTML بالعربي</p>
+  <p class="credit">تصميم وتطوير: <b>عبد أبو عرار</b></p>
+</footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="mt">
+    <button id="mclose" class="icon-btn mx" aria-label="إغلاق">✕</button>
+    <div id="mplayer" class="player"></div>
+    <h3 id="mt"></h3>
+    <p id="md" class="muted"></p>
+    <div id="ml"></div>
+  </div>
+</div>
+<div id="toast" class="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
